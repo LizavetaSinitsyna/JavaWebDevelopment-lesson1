@@ -28,7 +28,6 @@ public class NumberSquareLogic {
 	public int detectLastDigitOfNumberSquare(int number) {
 		int lastDigitOfNumber = Math.abs(number % 10);
 		return lastDigitsOfSquares[lastDigitOfNumber];
-
 	}
 
 }
