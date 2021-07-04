@@ -17,7 +17,7 @@ public class Main {
 
 		try {
 			System.out.printf("Длина окружности %f, площадь круга %f.", CircleLogic.calculateCircleLength(radius),
-					CircleLogic.calculateArea(radius));
+					CircleLogic.calculateCircleArea(radius));
 		} catch (NonPositiveParameterException e) {
 			System.out.println(e.getMessage());
 		}

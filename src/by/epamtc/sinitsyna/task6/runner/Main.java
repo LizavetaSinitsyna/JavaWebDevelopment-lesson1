@@ -18,8 +18,8 @@ public class Main {
 		seconds = input.requestLong("Введите количество секунд >>");
 
 		try {
-			System.out.printf("К указанному моменту прошло %d сут., %d ч., %d мин., %d сек.", logic.retrieveDays(seconds),
-					logic.retrieveHours(seconds), logic.retrieveMinutes(seconds), logic.retrieveOnlySeconds(seconds));
+			System.out.printf("К указанному моменту прошло %d сут., %d ч., %d мин., %d сек.", logic.extractDays(seconds),
+					logic.extractHours(seconds), logic.extractMinutes(seconds), logic.extractSeconds(seconds));
 		} catch (NegativeParameterException e) {
 			System.out.println(e.getMessage());
 		}

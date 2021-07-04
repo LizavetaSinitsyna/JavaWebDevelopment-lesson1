@@ -1,8 +1,3 @@
-/*
- * 1. Написать программу, позволяющую по последней цифре числа определить последнюю цифру его
- * квадрата.
-*/
-
 package by.epamtc.sinitsyna.input;
 
 import java.util.Scanner;
@@ -40,7 +35,7 @@ public class UserDataInput {
 
 		number = scanner.nextLong();
 		scanner.nextLine();
-		
+
 		return number;
 	}
 
@@ -66,7 +61,6 @@ public class UserDataInput {
 	public boolean сheckDoubleValidation(double value) {
 
 		if (value > Double.MAX_VALUE || value < -Double.MAX_VALUE) {
-			System.out.println("The value is out of range for double.");
 			return false;
 		}
 		return true;

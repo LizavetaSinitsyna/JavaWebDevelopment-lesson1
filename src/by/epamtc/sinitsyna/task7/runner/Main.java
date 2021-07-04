@@ -5,6 +5,7 @@
 
 package by.epamtc.sinitsyna.task7.runner;
 
+import by.epamtc.sinitsyna.exception.NullParameterException;
 import by.epamtc.sinitsyna.input.UserDataInput;
 import by.epamtc.sinitsyna.task7.bean.Point;
 import by.epamtc.sinitsyna.task7.logic.PointLogic;
@@ -18,7 +19,7 @@ public class Main {
 		double y2;
 		Point point1;
 		Point point2;
-		Point result;
+		Point result = null;
 		UserDataInput input = new UserDataInput();
 		PointLogic logic = new PointLogic();
 		PointView view = new PointView();
@@ -31,9 +32,13 @@ public class Main {
 		point1 = new Point(x1, y1);
 		point2 = new Point(x2, y2);
 
-		result = logic.retrieveClosestToOriginPoint(point1, point2);
-
-		System.out.println("Ближе к началу координат находится точка с кординатами " + view.retrievePointForPrint(result) + ".");
+		try {
+			result = logic.retrieveClosestToOriginPoint(point1, point2);
+			System.out
+					.println("Ближе к началу координат находится точка с кординатами " + view.printPoint(result) + ".");
+		} catch (NullParameterException e) {
+			e.printStackTrace();
+		}
 
 	}
 

@@ -5,10 +5,15 @@
 
 package by.epamtc.sinitsyna.task7.presentation;
 
+import by.epamtc.sinitsyna.exception.NullParameterException;
 import by.epamtc.sinitsyna.task7.bean.Point;
+import by.epamtc.sinitsyna.validation.ValidationHelper;
 
 public class PointView {
-	public String retrievePointForPrint(Point point) {
+	public String printPoint(Point point) throws NullParameterException {
+		if (ValidationHelper.isNull(point)) {
+			throw new NullParameterException("Point can't be equal to null.");
+		}
 		return String.format("(%f, %f)", point.getX(), point.getY());
 	}
 }

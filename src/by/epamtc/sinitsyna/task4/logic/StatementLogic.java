@@ -6,16 +6,17 @@
 package by.epamtc.sinitsyna.task4.logic;
 
 public class StatementLogic {
-	public boolean isEven(long number) {
+	private boolean isEven(long number) {
 		return number % 2 == 0;
 	}
 
-	public boolean isAtLeast2Even(long... array) {
+	public boolean isAtLeast2Even(long a, long b, long c, long d) {
 		int evenCounter = 0;
 
-		for (long element : array) {
-			evenCounter += isEven(element) ? 1 : 0;
-		}
+		evenCounter += isEven(a) ? 1 : 0;
+		evenCounter += isEven(b) ? 1 : 0;
+		evenCounter += isEven(c) ? 1 : 0;
+		evenCounter += isEven(d) ? 1 : 0;
 
 		return evenCounter >= 2;
 
